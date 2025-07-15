@@ -1,0 +1,136 @@
+.target-audience {
+  padding: 12.4rem 0;
+  padding-bottom: 0;
+  background-color: $grey;
+  // height: 100vh;
+  overflow: hidden;
+
+  @include phone {
+    padding: 0;
+    padding-bottom: 13.8rem;
+  }
+
+  & .target-audience_title {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-bottom: 4.8rem;
+    max-width: 100%;
+    // justify-self: center;
+    text-align: center;
+
+    & span {
+      letter-spacing: 5rem;
+      opacity: 0;
+
+      @include phone {
+        letter-spacing: 0;
+      }
+    }
+
+
+    @include phone {
+      // max-width:max-content;
+      // width: 125rem;
+    }
+  }
+
+  .target-audience_card-container {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 80rem;
+    height: calc(100vh - 17.2rem);
+    // height: 42.2rem;
+    margin-bottom: 4.4rem;
+    overflow: hidden;
+
+    @include phone {
+      width: 100%;
+      height: 60rem;
+    }
+  }
+
+  .target-audience_card {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: flex;
+    gap: 3.2rem;
+    width: 72rem;
+    border-radius: 4rem;
+    border: 0.1rem solid $black;
+    background-color: $white;
+    padding: 3.2rem;
+    transform: translateX(-50%);
+    // opacity: 0;
+
+    &:nth-child(2) {
+      transform: translateY(500%) translateX(calc(-50% - 1rem));
+
+      @include phone {
+        transform: translateY(500%) translateX(-50%);
+      }
+    }
+
+    &:nth-child(3) {
+      transform: translateY(500%) translateX(calc(-50% - 2rem));
+
+      @include phone {
+        transform: translateY(500%) translateX(-50%);
+      }
+    }
+
+    &:nth-child(4) {
+      transform: translateY(500%) translateX(calc(-50% - 3rem));
+
+      @include phone {
+        transform: translateY(500%) translateX(-50%);
+      }
+    }
+
+    &:nth-child(5) {
+      transform: translateY(500%) translateX(calc(-50% - 4rem));
+
+      @include phone {
+        transform: translateY(500%) translateX(-50%);
+      }
+    }
+
+
+    & img {
+      width: 31.2rem;
+      height: 31.2rem;
+    }
+
+    @include phone {
+      flex-direction: column;
+      width: 100%;
+      height: 49.3rem;
+      padding: 1.6rem;
+      padding-bottom: 2.4rem;
+    }
+  }
+
+  .target-audience_card-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  &.animate {
+    & .target-audience_title {
+      & span {
+        animation: animFont 0.8s ease-in-out forwards, visibleText 0.8s ease-in-out forwards;
+
+        @include phone {
+          //animation: animFontMobile 0.8s ease-in-out forwards, visibleText 0.8s ease-in-out forwards;
+          animation: none;
+          opacity: 1;
+        }
+      }
+    }
+
+  }
+}

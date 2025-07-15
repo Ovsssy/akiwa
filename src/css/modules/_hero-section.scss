@@ -1,0 +1,209 @@
+.hero-section {
+  position: relative;
+  padding-top: 3.7rem;
+  padding-bottom: 4.8rem;
+  margin-bottom: 3rem;
+  height: 100vh;
+
+  & .wrapper {
+    height: 100%;
+  }
+
+  @include phone {
+    padding-top: 10.6rem;
+    padding-bottom: 16.6rem;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .hero-section_logo {
+    position: relative;
+    width: 36rem;
+    height: 9.8rem;
+    margin-bottom: 4rem;
+    z-index: 1;
+
+    @include phone {
+      width: 16.8rem;
+      height: 4.57rem;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  .title2 {
+    position: relative;
+    max-width: 48.5rem;
+    margin-bottom: 30.3rem;
+    color: $orange;
+    z-index: 1;
+
+    &.animRotate {
+      display: flex;
+      flex-wrap: wrap;
+
+      & span {
+        display: flex;
+        transform: translate(10rem, 5rem) scale(0) rotate(180deg);
+        animation: animTitle 0.2s ease-in-out forwards;
+      }
+    }
+
+    @include phone {
+      max-width: 24.8rem;
+      margin-bottom: 25.1rem;
+    }
+  }
+
+  .text {
+    position: relative;
+    max-width: 22.9rem;
+    color: $dark_blue;
+    z-index: 1;
+
+    @include phone {
+      max-width: 17.3rem;
+    }
+  }
+
+  .hero-section_lottie {
+    position: absolute;
+    right: 0;
+    top: -11rem;
+    width: 100%;
+    height: auto;
+
+    & svg{
+      width: 100%;
+      height: 100%;
+    }
+
+    @include phone {
+      width: 61.6rem;
+      height: 47.1rem;
+      opacity: 0;
+    }
+  }
+
+  & .hero-section_svg-wrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 104.7rem;
+    height: 75rem;
+    display: none;
+
+    @include tablet {
+      display: block;
+      width: 61.6rem;
+      height: 47.1rem;
+    }
+    @include phone{
+      display: none;
+    }
+  }
+
+  & .hero-section_square {
+    position: absolute;
+    top: 6rem;
+    right: 1.4rem;
+    width: 17.3rem;
+    height: 17.3rem;
+    display: none;
+
+    transform: scale(0);
+    animation: scaleSquare 0.3s ease-in-out forwards;
+    animation-delay: 3s;
+
+    @include tablet {
+      display: block;
+    }
+
+    @include phone {
+      display: none;
+    }
+  }
+
+  & .hero-section_line {
+    position: absolute;
+    display: none;
+    top: -10.9rem;
+    right: 10.2rem;
+    width: 85.5rem;
+    height: 68.2rem;
+    z-index: 0;
+
+    & path {
+      stroke-dasharray: 2900;
+      stroke-dashoffset: 2900;
+      animation: draw 1.8s ease-in-out forwards;
+      animation-delay: 3.2s;
+    }
+
+    &__second {
+      display: none;
+    }
+
+    @include tablet{
+      display: block;
+      &__second{
+        display: none;
+      }
+    }
+
+    @include phone {
+
+      width: 42.9rem;
+      height: 58.4rem;
+
+      &__first {
+        display: none;
+      }
+
+      &__second {
+        display: block;
+        right: -8.4rem;
+        top: -7rem;
+      }
+    }
+  }
+
+  & .hero-section_circle {
+    position: absolute;
+    display: none;
+    bottom: 11.8rem;
+    left: 6.1rem;
+    width: 12.3rem;
+    height: 12.3rem;
+    transform: scale(0);
+    animation: scaleCircle 0.3s ease-in-out forwards;
+    animation-delay: 5.1s;
+
+    @include tablet{
+      display: block;
+      bottom: -11.8rem;
+      left: -37rem;
+    }
+
+    @include phone {
+      display: block;
+      bottom: -10.8rem;
+      left: 34rem;
+      width: 7rem;
+      height: 7rem;
+      animation-delay: 4.6s;
+    }
+  }
+}
+
+#hero-video_mob{
+  video{
+    display: none;
+    position: absolute;
+    top: -14rem;
+    width: 44.5rem;
+    right: -2rem;
+    @include phone{
+      display: block;
+    }
+  }
+}

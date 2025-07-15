@@ -1,0 +1,13 @@
+.link{
+  color: $black;
+  @include underline;
+  transition: all $duration;
+
+  &:hover{
+    color: $orange;
+  }
+}
+
+.link-animation{
+  
+}

@@ -1,0 +1,262 @@
+.company-people {
+  position: relative;
+  margin-bottom: 24rem;
+  // padding-top: 24rem;
+  height: 100vh;
+  overflow: hidden;
+
+  @include tablet {
+    height: auto;
+  }
+
+  @include phone {
+    margin-bottom: 20rem;
+  }
+
+  .company-people_title {
+    max-width: 65.6rem;
+    text-align: end;
+    opacity: 0;
+    transform: translateY(10rem);
+
+    @include tablet {
+      align-self: flex-end;
+    }
+
+    @include phone {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      width: 100%;
+      text-align: start;
+
+      & span:last-child {
+        text-align: end;
+      }
+    }
+  }
+
+  .company-people_text-block {
+    display: grid;
+    grid-template-columns: 65.6rem 65.6rem;
+    justify-content: center;
+    gap: 3.2rem;
+    margin-bottom: 6.4rem;
+
+    .text {
+      max-width: 31.2rem;
+      margin-top: 10rem;
+      opacity: 0;
+      transform: translateY(10rem);
+
+      @include phone {
+        margin-top: 0;
+        max-width: 25.9rem;
+      }
+    }
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 5.6rem;
+    }
+  }
+
+  .company-people_images-block {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 3.2rem;
+
+    & .company-people_image {
+      width: 65.6rem;
+      height: 65.6rem;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+      }
+
+      &:nth-child(1) {
+        @include tablet {
+          & img {
+            transform: translate(0, 0) scale(0);
+            transform-origin: bottom left;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        @include tablet {
+          & img {
+            transform: translate(0, 0) scale(0);
+            transform-origin: bottom right;
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 250%);
+        z-index: 5;
+
+        @include tablet {
+          position: static;
+          transform: translateX(0);
+          opacity: 1;
+
+          & img {
+            transform: translate(0, 0) scale(0);
+            transform-origin: bottom left;
+            z-index: 8;
+          }
+        }
+      }
+
+      &:nth-child(5) {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        opacity: 0;
+        transform: translateX(-50%);
+        z-index: 4;
+
+        @include tablet {
+          position: static;
+          transform: translateX(0);
+          opacity: 1;
+
+          & img {
+            transform: translate(0, 0) scale(0);
+            transform-origin: bottom right;
+            z-index: 8;
+          }
+        }
+      }
+
+      &:nth-child(6) {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        opacity: 0;
+        transform: translateX(-50%);
+        z-index: 3;
+
+        @include tablet {
+          position: static;
+          transform: translateX(0);
+          opacity: 1;
+
+          & img {
+            transform: translate(0, 0) scale(0);
+            transform-origin: bottom left;
+            z-index: 8;
+          }
+        }
+      }
+
+
+      @include phone {
+        width: 100%;
+        height: 31.8rem;
+      }
+    }
+
+    & .title2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200rem;
+      text-align: center;
+      letter-spacing: 4rem;
+      transform: translate(-50%, -50%) scale(0.3);
+      opacity: 0;
+      z-index: -1;
+
+      @include phone {
+        width: 130rem;
+        z-index: 5;
+      }
+    }
+
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  & .company-people_lottie-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 65.6rem;
+    background-color: $white;
+    overflow: hidden;
+    z-index: -1;
+
+    @include tablet {
+      position: relative;
+      width: 65.6rem;
+      height: 65.6rem;
+      z-index: 3;
+    }
+
+    @include phone {
+      position: relative;
+      width: 100%;
+      height: 31.9rem;
+      z-index: 3;
+    }
+  }
+
+  & .company-people_lottie {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 65.6rem;
+    height: 65.6rem;
+    transform: translate(-50%);
+    z-index: -2;
+
+    @include phone {
+      width: 100%;
+      height: 31.9rem;
+      z-index: 4;
+    }
+  }
+
+  &.animate {
+    & .company-people_title {
+      animation: slideIn 0.6s ease-out forwards;
+    }
+
+    & .company-people_text-block {
+      & .text {
+        animation: slideIn 0.6s ease-out forwards;
+        animation-delay: 0.2s;
+      }
+    }
+  }
+
+  .company-people_images-block .animate {
+    & img {
+      @include tablet {
+        animation: scale-animation 0.6s ease-in-out forwards;
+      }
+    }
+  }
+
+  .company-people_lottie-wrapper{
+    &.animate{
+      .title2{
+        @include tablet {
+          animation: companyPeopleTextMobile 0.6s ease-in-out forwards, letter 0.6s ease-in-out forwards;
+        }
+      }
+    }
+  }
+}

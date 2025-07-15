@@ -1,0 +1,314 @@
+.accordion-item {
+    width: 100rem;
+
+    .accordion-content {
+        padding: 3.5rem 3.5rem;
+        cursor: pointer;
+        background: $white;
+        border-radius: 2rem;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+
+        .accordion-title {
+            .title-wrapp {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+
+                .title {
+                    font-size: 2.8rem;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 130%;
+                    width: 86.5rem;
+
+                    @include phone {
+                        font-size: 2.2rem;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 110%;
+                    }
+
+                }
+            }
+
+            .icon {
+                transition: all .3s;
+
+                svg {
+
+                    path {
+                        transition: all .7s;
+
+                        &:last-child {
+                            //opacity: 0;
+                            transform: rotate(0deg);
+                            transform-origin: center;
+                        }
+                    }
+                }
+
+                &.rotate {
+                    svg {
+
+                        rect {
+                            fill: #000;
+                        }
+
+                        path {
+                            transition: all .7s;
+
+                            &:last-child {
+                                //opacity: 0;
+                                transform: rotate(-90deg);
+                                transform-origin: center;
+                            }
+                        }
+                    }
+                }
+
+                svg {
+                    width: 4.5rem;
+                    height: 4.5rem;
+                    flex-shrink: 0;
+                    transition: all .4s;
+                    transform: rotate(0deg);
+
+                    path {
+                        transition: all .4s;
+                    }
+                }
+            }
+        }
+
+        .accordion-includes {
+            display: none;
+            margin-top: 1.7rem;
+
+            &.active {
+                display: block;
+            }
+
+            .desc-acc {
+                font-size: 1.6rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 125%;
+
+                ul {
+                    list-style-type: disc;
+                    margin-left: 2rem;
+
+                    li {
+                        list-style-type: disc;
+                    }
+                }
+
+                .combination-card {
+                    padding: 1.5rem;
+                    border-radius: 0.4rem;
+                    background: #F2F2F2;
+                    gap: 1.7rem;
+
+                    img {
+                        width: 7.2rem;
+                        height: 7.1rem;
+                    }
+
+                    .info {
+                        gap: 0.3rem;
+
+                        span {
+                            font-weight: 600;
+                            font-size: 1.6rem;
+                            line-height: 130%;
+
+                            &:last-child {
+                                font-size: 1.4rem;
+                            }
+                        }
+                    }
+                }
+
+                .img-wrapp-sert {
+
+                    @include phone {
+                        font-size: 1.4rem;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1.8rem;
+                    }
+
+                    img {
+                        width: 24rem;
+                        height: 36.1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.accordion2 {
+    details {
+        position: relative;
+        width: 65.6rem;
+        background-color: $white;
+        color: $black;
+
+        summary {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding: 3.2rem 0;
+            user-select: none;
+            cursor: pointer;
+            border-bottom: 0.1rem solid $black;
+            transition: border-color 0s ease-in-out 0.6s;
+
+
+            &::marker,
+            &::-webkit-details-marker {
+                display: none;
+            }
+        }
+
+        &.open {
+
+            & summary{
+                border-color: rgba($black, 0);
+                transition: border-color 0s;
+            }
+
+            .accordion2-content {
+                opacity: 0;
+            }
+
+            .accordion2_chevron-box {
+
+                &::after {
+                    transform: rotate(0deg);
+                }
+            }
+
+            &+hr {
+                margin-top: 1rem;
+            }
+        }
+
+        @include phone {
+            width: 100%;
+        }
+    }
+
+    &_chevron {
+        &-box {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            position: relative;
+            width: 4rem;
+            height: 4rem;
+            background-color: transparent;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 2.8rem;
+                height: 0.4rem;
+                background-color: $black;
+                transition: transform $duration*2;
+
+                @include phone {
+                    width: 1.7rem;
+                    height: 0.3rem;
+                }
+            }
+
+            &::after {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    &_content {
+        padding: 2.4rem 0;
+        padding-bottom: 5.6rem;
+        color: $black;
+        border-bottom: 0.1rem solid $black;
+        transition: opacity $duration;
+
+        & .accordion2_content-list {
+            display: flex;
+            flex-direction: column;
+            row-gap: 2.4rem;
+
+            & li:nth-child(even) {
+                align-self: flex-end;
+            }
+        }
+
+        & .accordion2_content-list__two-columns {
+            & li {
+                width: 31.2rem;
+            }
+        }
+
+        & .accordion2_content-list__one-column {
+
+            & li {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            & li:nth-child(even) {
+                align-self: start;
+            }
+
+        }
+    }
+}
+
+@include phone {
+    .accordion2 {
+        details {
+            summary {
+                padding: 2.4rem 0;
+                font-size: 2.4rem;
+                line-height: 100%;
+            }
+        }
+
+        &_chevron {
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-left: 1.5rem;
+
+            &-box{
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+
+        &_content {
+            padding: 2.4rem 0 5.6rem 0;
+        }
+
+        & .accordion2_content-list__two-columns {
+            & li {
+                width: 17.3rem;
+            }
+        }
+    }
+}

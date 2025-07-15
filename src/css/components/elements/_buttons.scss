@@ -1,0 +1,157 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 5.6rem;
+  padding: 1.7rem 1.6rem 1.5rem 1.6rem;
+  border: none;
+  background-color: $black;
+  transition: padding $duration $effect;
+  flex-shrink: 0;
+  transition: background-color $duration;
+
+  & span {
+    color: $white;
+  }
+
+  & img {
+    margin-right: 0.8rem;
+  }
+
+  &-s {
+    padding: 0.5rem 0.8rem 0.3rem 0.8rem;
+    height: 3.2rem;
+  }
+
+  &:hover {
+    background-color: $orange;
+
+    @include phone {
+      background-color: $black;
+    } 
+  }
+
+  &:active{
+    @include phone {
+      background-color: $orange;
+    }
+  }
+
+  &:disabled {
+    background-color: $grey;
+    opacity: 0.6;
+    cursor: default;
+    pointer-events: none;
+
+    & span {
+      color: $dark_blue;
+    }
+  }
+}
+
+.button-iskra {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  // width: 11.6rem;
+  height: 3.8rem;
+
+  &__text {
+    font-family: $base-ff;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-transform: uppercase;
+    transition: color $duration $effect;
+    opacity: 0.72;
+  }
+
+  img,
+  svg {
+    width: auto;
+    height: 4rem;
+  }
+
+  &:hover {
+    .button-iskra__text {
+      // color: $;
+    }
+  }
+}
+
+.btn-image {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  & .btn-image_wrapper {
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  & span {
+    color: $dark_blue;
+    transition: color $duration;
+
+    @include phone {
+      color: $black;
+    }
+  }
+
+  & svg {
+    & path {
+      transition: fill $duration;
+
+      @include phone{
+        fill: $black;
+      }
+    }
+  }
+
+  &:hover {
+
+    & svg {
+      & path {
+        fill: $black;
+      }
+    }
+
+    & span {
+      color: $black;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+.button-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: $black;
+  cursor: pointer;
+  transition: background-color $duration;
+
+  &:hover {
+    background-color: $gray_blue;
+  }
+
+  @include phone {
+    &:hover{
+      background-color: $black;
+    }
+  }
+
+  &:active{
+    background-color: $gray_blue;
+  }
+}

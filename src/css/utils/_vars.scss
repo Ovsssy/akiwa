@@ -1,0 +1,26 @@
+// fonts
+$base-ff: 'Arial', sans-serif;
+$second-ff: 'Stapel', sans-serif;
+
+// media
+$laptop: 1600px;
+$tablet: 991px;
+$phone: 767px;
+
+//params preloader
+$size: rem(180);
+$bdiam: ($size/4)-10;
+
+// color
+$gray_blue: #C4D3EB;
+$white: #FFFFFF;
+$black: #000000;
+$grey: #DBE0E8;
+$orange: #F54A00;
+$dark_blue: #464F5E;
+$light_blue: #F3F6FB;
+$error: #E90000;
+
+// transition
+$duration: 0.3s;
+$effect: ease-out;

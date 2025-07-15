@@ -1,0 +1,160 @@
+.swiper-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.4rem;
+
+  @include phone {
+    margin-top: 1.6rem;
+  }
+}
+
+.swiper-timeline-block {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.swiper-timeline {
+  position: relative;
+  width: 33.6rem;
+  height: 0.4rem;
+  border-radius: 0.8rem;
+  overflow: hidden;
+
+  @include phone {
+    width: 17.8rem;
+  }
+
+  & .swiper-progress {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: auto;
+    height: 100%;
+    transition: all $duration;
+  }
+}
+
+.swiper-nav-block {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+.swiper-nav-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 1px solid gray;
+  transition: all $duration;
+
+  &:hover {
+    background-color: $black;
+
+    &::before {
+      border-left-color: $white;
+      border-bottom-color: $white;
+    }
+  }
+
+  @include phone {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    left: 1.6rem;
+    transform: rotate(45deg);
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+    transition: all $duration;
+
+    @include phone {
+      left: 1.3rem;
+    }
+  }
+
+  &.swiper-nav-btn__next {
+    &:before {
+      transform: rotate(-135deg);
+      left: 1.1rem;
+
+      @include phone {
+        left: 0.8rem;
+      }
+    }
+  }
+}
+
+.main-pagination-wrapper {
+  position: absolute;
+  bottom: 1.6rem;
+  display: flex;
+  gap: 0.2rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.main-pagination-circle,
+.main-pagination-square {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: 0.1rem;
+  background-color: $gray_blue;
+  opacity: 0.4;
+  z-index: 1;
+  @include phone{
+    margin-top: 0!important;
+  }
+}
+
+.main-pagination-circle {
+  border-radius: 50%;
+}
+
+.swiper-pagination {
+  position: static;
+  display: flex;
+  width: fit-content !important;
+  height: 0.8rem;
+  @include phone{
+    display: flex;
+  }
+  & .swiper-pagination-bullet {
+    width: 2.6rem;
+    height: 0.8rem;
+    background-color: $gray_blue;
+    opacity: 0.4;
+    border-radius: 0%;
+    margin: 0 !important;
+
+    &.swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes timeline {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+.cases-pagination{
+  @include phone{
+    display: flex;
+  }
+}

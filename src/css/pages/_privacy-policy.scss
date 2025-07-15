@@ -1,0 +1,68 @@
+.privacy-policy {
+  width: 65.3rem;
+  margin: 0 auto;
+  padding-top: 6.4rem;
+  padding-bottom: 13.6rem;
+
+  @include phone {
+    padding: 4.8rem 1.5rem 14.3rem 1.5rem;
+    max-width: 100%;
+  }
+
+  & h1 {
+    font-family: $second-ff;
+    margin-bottom: 4rem;
+    font-size: 4.8rem;
+    font-weight: 400;
+    line-height: 100%;
+    color: $black;
+    text-align: center;
+
+    @include phone {
+      font-size: 2.4rem;
+    }
+  }
+
+  & h2 {
+    font-family: $second-ff;
+    margin-bottom: 2.4rem;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 100%;
+    color: $black;
+
+    @include phone {
+      font-size: 1.8rem;
+    }
+  }
+
+  & p {
+    margin-bottom: 4rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 120%;
+    color: $dark_blue;
+
+    @include phone {
+      font-size: 1.6rem;
+    }
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  & ul{
+    padding-left: 2rem;
+    margin-bottom: 4.8rem;
+    margin-bottom: 4rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 150%;
+
+    & li{
+      margin-bottom: 1.6rem;
+      list-style: decimal;
+    }
+  }
+}

@@ -1,0 +1,245 @@
+// text, email, tel fields
+.wpcf7-form-control-wrap {
+  display: block;
+  position: relative;
+
+  input:not([type="checkbox"], [type="radio"], [type="submit"]),
+  textarea {
+    width: 100%;
+    height: 5.2rem;
+    padding: 1.6rem;
+    font-family: $base-ff;
+    color: $dark_blue;
+    outline: none;
+
+    &.wpcf7-not-valid {
+      border-color: red;
+    }
+  }
+
+  textarea {
+    height: 7.1rem;
+    padding-top: 1.8rem;
+  }
+}
+
+.wpcf7-not-valid-tip {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 1.4rem;
+  line-height: 1.285;
+  color: red;
+}
+
+
+
+// checkbox
+input[type=checkbox] {
+  width: 3.2rem;
+  height: 3.2rem;
+  vertical-align: middle;
+  margin: 0;
+  line-height: 1;
+  appearance: none;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.1s;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 3.2rem;
+    height: 3.2rem;
+    padding: 1rem;
+    background-image: url('../static/img/checkbox-off.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2.2rem;
+    transition: all 0.1s;
+  }
+
+  &:hover::before {
+    background-image: url('../static/img/checkbox-off-hover.svg');
+  }
+
+  &:checked::before {
+    background-image: url('../static/img/checkbox-on.svg');
+  }
+
+  &+.wpcf7-list-item-label {
+    user-select: none;
+    cursor: pointer;
+  }
+}
+
+.wpcf7-list-item {
+  label {
+    display: flex;
+    align-items: center;
+  }
+
+  .wpcf7-list-item-label {
+    color: $black;
+  }
+}
+
+
+input[type="submit"] {
+  width: 100%;
+}
+
+
+
+// <label> инпута файла
+.file-picker {
+  display: inline-flex;
+  cursor: pointer;
+
+  &__clip {
+    flex-shrink: 0;
+    display: block;
+    width: 2.5rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__text {
+    display: block;
+    margin-top: 0.3rem;
+  }
+
+  &__filename {
+    display: block;
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+    line-height: 1.285;
+
+    svg {
+      vertical-align: middle;
+    }
+  }
+}
+
+// Сам инпут не нужен
+input[type=file] {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -9999px;
+  z-index: -1;
+}
+
+.input-wrapper {
+  position: relative;
+  display: block;
+}
+
+.wpcf7-spinner {
+  display: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.wpcf7-response-output {
+  display: none;
+}
+
+.wpcf7-mask::placeholder {
+  opacity: 0;
+}
+
+.input-radio-wrapper {
+  position: relative;
+}
+
+.input-radio {
+  // position: absolute;
+  // left: 0;
+  // top: 0;
+  // visibility: hidden;
+  // opacity: 0;
+
+  &:hover {
+    &+.input-radio-label {
+      border: 0.1rem solid $dark_blue;
+      color: $dark_blue;
+    }
+  }
+
+  &:checked {
+    &+.input-radio-label {
+      border: 0.1rem solid $black;
+      color: $black;
+    }
+  }
+}
+
+.input-radio-label {
+  display: block;
+  width: fit-content;
+  padding: 1rem 1.6rem;
+  border-radius: 5rem;
+  border: 0.1rem solid $grey;
+  color: $dark_blue;
+  transition: all $duration;
+  cursor: pointer;
+}
+
+
+.form_group-tabs {
+
+  .wpcf7-form-control .wpcf7-radio {
+    display: flex;
+  }
+
+  .wpcf7-radio {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .wpcf7-list-item-label {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2.4rem;
+
+    @include phone {
+      font-size: 1.6rem;
+    }
+  }
+
+  .wpcf7-form-control input[type="radio"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+    /* Скрыть стандартные радио кнопки */
+    opacity: 0;
+  }
+
+
+  .wpcf7-form-control .wpcf7-list-item-label {
+    display: inline-block;
+    padding: 1rem 1.6rem;
+    border-radius: 5rem;
+    border: 0.1rem solid $grey;
+    color: $dark_blue;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .wpcf7-form-control input[type="radio"]:hover+.wpcf7-list-item-label {
+    border: 0.1rem solid $dark_blue;
+    color: $dark_blue;
+  }
+  .wpcf7-form-control input[type="radio"]:checked+.wpcf7-list-item-label {
+    border: 0.1rem solid $black;
+    color: $black;
+  }
+}

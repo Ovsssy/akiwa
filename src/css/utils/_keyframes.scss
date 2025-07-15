@@ -1,0 +1,388 @@
+@keyframes visibleText {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(10rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 2900;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scaleSquare {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleCircle {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(-120%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(120%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLine {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(10rem);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes backgroundGrey {
+  from {
+    background-color: $white;
+  }
+
+  to {
+    background-color: $grey;
+  }
+}
+
+@keyframes slideMenu {
+  from {
+    transform: translateX(-150%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animFont{
+  from{
+    letter-spacing: 5rem;
+  }
+
+  to {
+    letter-spacing: 0;
+  }
+}
+
+@keyframes animFontMobile{
+  from{
+    letter-spacing: 0;
+  }
+
+  to {
+    letter-spacing: 0;
+  }
+}
+
+@keyframes animFont2 {
+  from {
+    gap: 15rem;
+    transform: translateX(-100%) scale(0);
+  }
+
+  to {
+    gap: 0;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes animFont3 {
+  from {
+    gap: 15rem;
+    transform: translateX(100%) scale(0);
+  }
+
+  to {
+    gap: 0;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes animTitle {
+  from {
+    transform: translate(10rem, 5rem) scale(0) rotate(180deg);
+  }
+
+  to {
+    transform: translateY(0) scale(1) rotate(0);
+  }
+}
+
+@keyframes animTitle2 {
+  from {
+    gap: 2rem;
+  }
+
+  to {
+    gap: 0;
+  }
+}
+
+@keyframes companyPeopleText {
+  from {
+    opacity: 0;
+    width: 200rem;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes companyPeopleTextMobile {
+  from {
+    opacity: 0;
+    width: 130rem;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+
+  to {
+    opacity: 1;
+    width: 100%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes letter {
+  from {
+    letter-spacing: 4rem;
+  }
+
+  to {
+    letter-spacing: 0;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes afterSlideLeft {
+  from {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  to {
+    transform: translateX(-151%) translateY(0);
+  }
+}
+
+@keyframes afterSlideRight {
+  from {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  to {
+    transform: translateX(51%) translateY(0);
+  }
+}
+
+@keyframes halfOpacity {
+  from {
+    opacity: 0.6;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-animation {
+  0% {
+    transform: translate(0,0) scale(0); /* начало анимации — маленькое изображение */
+  }
+  100% {
+    transform: translate(0,0) scale(1); /* конец анимации — полное изображение */
+  }
+}
+
+@keyframes letter-a {
+  from{
+    width: 2rem;
+    height: 1.8rem;
+  }
+
+  to{
+    width: 8.5rem;
+    height: 7.7rem;
+  }
+}
+
+@keyframes letter-a-reverse {
+  from{
+    width: 8.5rem;
+    height: 7.7rem;
+  }
+
+  to{
+    width: 2rem;
+    height: 1.8rem;
+  }
+}
+
+@keyframes letter-k {
+  from{
+    width: 1.7rem;
+    height: 2.4rem;
+  }
+
+  to{
+    width: 6.9rem;
+    height: 9.8rem;
+  }
+}
+
+@keyframes letter-k-reverse {
+  from{
+    width: 6.9rem;
+    height: 9.8rem;
+  }
+
+  to{
+    width: 1.7rem;
+    height: 2.4rem;
+  }
+}
+
+@keyframes letter-i {
+  from{
+    width: 0.4rem;
+    height: 2.4rem;
+  }
+
+  to{
+    width: 1.5rem;
+    height: 9rem;
+  }
+}
+
+@keyframes letter-i-reverse {
+  from{
+    width: 1.5rem;
+    height: 9rem;
+  }
+
+  to{
+    width: 0.4rem;
+    height: 2.4rem;
+  }
+}
+
+@keyframes letter-w {
+  from{
+    width: 2.6rem;
+    height: 1.8rem;
+  }
+
+  to{
+    width: 11rem;
+    height: 7.5rem;
+  }
+}
+
+
+@keyframes letter-w-reverse {
+  from{
+    width: 11rem;
+    height: 7.5rem;
+  }
+
+  to{
+    width: 2.6rem;
+    height: 1.8rem;
+  }
+}
+
+
+@keyframes letter-a2 {
+  from{
+    width: 1.7rem;
+    height: 1.9rem;
+  }
+
+  to{
+    width: 7rem;
+    height: 7.9rem;
+  }
+}
+
+
+@keyframes letter-a2-reverse {
+  from{
+    width: 7rem;
+    height: 7.9rem;
+  }
+
+  to{
+    width: 1.7rem;
+    height: 1.9rem;
+  }
+}

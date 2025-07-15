@@ -1,0 +1,588 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.6rem 0;
+  z-index: 100;
+  transition: background-color 0.6s ease-in-out, transform 0.6s ease-in-out;
+
+  @include phone {
+    padding: 1rem 0;
+    background-color: $white;
+  }
+
+  .wrapper {
+    overflow: visible !important;
+  }
+
+  &.header-case {
+    .logo-touch {
+      display: none;
+    }
+
+    .case-logo {
+      display: block;
+      @include phone {
+        display: none;
+      }
+    }
+
+    .logo-not-touch {
+      pointer-events: visible;
+    }
+
+    .header_logo {
+      display: none;
+    }
+
+    .burger-btn {
+      display: none;
+    }
+
+    .header_button-close-link {
+      position: relative;
+      width: 4rem;
+      height: 4rem;
+      opacity: 1;
+      visibility: visible;
+
+      & span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 2.8rem;
+        height: 0.4rem;
+        background-color: $black;
+
+        &:nth-child(1) {
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        &:nth-child(2) {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+      }
+    }
+  }
+
+  &.hidden {
+
+    .burger-btn,
+    .header_btn,
+    .header_btn-sound {
+      opacity: 0;
+      visibility: hidden;
+
+      @include phone {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+    }
+
+    .logo-touch {
+      display: none;
+    }
+
+    .logo-touch {
+      display: none;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .logo-not-touch {
+    pointer-events: none;
+
+    @include tablet {
+      pointer-events: all;
+    }
+  }
+
+  .logo-touch {
+    width: 9rem;
+    height: 2.4rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include phone {
+      display: none;
+    }
+  }
+
+  .header_logo {
+    width: 95%;
+    position: absolute;
+    transition: all 1s;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+
+    @include phone {
+      display: none;
+    }
+  }
+
+  .case-logo {
+    display: none;
+    width: 9rem;
+    height: 2.4rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .header_logo-mob {
+    display: none;
+
+    @include phone {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 9rem;
+      height: 2.4rem;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .header_btn {
+    transition: all .3s;
+
+    & svg {
+      display: none;
+    }
+
+    @include phone {
+      padding: 0.4rem 0.3rem 0.3rem 0.4rem;
+      background-color: rgba($black, 0);
+
+      & span {
+        display: none;
+      }
+
+      & svg {
+        display: block;
+      }
+    }
+  }
+
+  .burger-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 4.8rem;
+    height: 4rem;
+    padding: 1.4rem 0.4rem;
+    transition: all $duration;
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: '';
+      width: 0.4rem;
+      height: 0.4rem;
+      background-color: $black;
+    }
+
+    &::before {
+      top: 1.4rem;
+      left: 0.4rem;
+      border-radius: 50%;
+    }
+
+    &::after {
+      bottom: 1.4rem;
+      right: 0.4rem;
+    }
+
+    .burger-btn_line-wrapper {
+      width: 3.3rem;
+      height: 0.4rem;
+      overflow: hidden;
+
+      &:first-child {
+        align-self: flex-end;
+      }
+
+      & span {
+        position: relative;
+        display: block;
+        width: 3.3rem;
+        height: 0.4rem;
+        // overflow: hidden;
+
+        &::before {
+          position: absolute;
+          content: '';
+          display: block;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 0.4rem;
+          background-color: $black;
+          transform: translateX(-150%);
+          transition: transform $duration;
+        }
+
+        &::after {
+          position: absolute;
+          content: '';
+          display: block;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 0.4rem;
+          background-color: $black;
+          transition: transform $duration;
+        }
+      }
+    }
+
+    &:hover {
+      & span {
+        &::before {
+          transform: translateX(0);
+        }
+
+        &::after {
+          transform: translateX(150%);
+        }
+      }
+    }
+  }
+
+  .header_button-close {
+    position: absolute;
+    top: 0;
+    left: 4.8rem;
+    width: 4rem;
+    height: 4rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: rotate(-45deg);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    @include phone {
+      left: 1.5rem;
+    }
+
+    & span {
+      position: relative;
+      display: block;
+      width: 2.8rem;
+      height: 0.4rem;
+      overflow: hidden;
+      transition: transform 0.6s ease-in-out;
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $black;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        transform: translateX(-101%);
+        transition: transform 0.6s ease-in-out;
+      }
+
+      &:nth-child(1) {
+        transform: translate(0.5rem, 0.2rem);
+      }
+
+      &:nth-child(2) {
+        transform: translate(0.5rem, -0.2rem) rotate(90deg);
+      }
+
+    }
+  }
+
+  .header-menu {
+    position: absolute;
+    top: 7.2rem;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    background-color: $white;
+    z-index: 1;
+    height: calc(100vh - 7.2rem);
+    transition: all $duration;
+
+    & .wrapper {
+      align-items: start;
+      justify-content: start;
+      overflow: hidden;
+    }
+
+    .header-menu_nav {
+      padding-top: 10.8rem;
+
+      @include phone {
+        padding-top: 4.4rem;
+      }
+    }
+
+    .header-menu_nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 3.2rem;
+
+      @include phone {
+        gap: 0;
+      }
+
+      & li {
+        transform: translateX(-150%);
+
+        @include tablet {
+          padding: 0.4rem 0;
+        }
+
+        & a {
+          position: relative;
+          @include hoverOrange;
+
+          @include phone {
+            display: flex;
+            align-items: center;
+            height: 5.6rem;
+          }
+        }
+      }
+    }
+
+    @include phone {
+      height: calc(100vh - 6rem);
+      top: 6rem;
+    }
+  }
+
+  .header_button-wrapper {
+    display: flex;
+    gap: 0.8rem;
+
+    @include phone {
+      width: 4.8rem;
+      height: 4rem;
+    }
+
+    .btn {
+      @include phone {
+        width: 4.8rem;
+        height: 4rem;
+      }
+    }
+  }
+
+  .header_btn-sound {
+    position: relative;
+    width: 3.2rem;
+    height: 3.2rem;
+    transition: all $duration;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 50%;
+      width: 1.4rem;
+      height: 1.2rem;
+      background-size: 100%;
+      transform: translate(-50%, -50%);
+      transition: opacity $duration;
+    }
+
+    &::before {
+      background-image: url("../static/img/sound-none.svg");
+      opacity: 1;
+    }
+
+    &::after {
+      background-image: url("../static/img/sound.svg");
+      opacity: 0;
+    }
+
+    &.active {
+      &::before {
+        opacity: 0;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &.active {
+    background-color: $white;
+
+    .header-menu {
+      opacity: 1;
+      visibility: visible;
+
+      & .header-menu_nav-list {
+        & li {
+          animation: slideMenu 0.6s ease-in-out forwards;
+
+          &:nth-child(2) {
+            animation-delay: 0.1s;
+          }
+
+          &:nth-child(3) {
+            animation-delay: 0.2s;
+          }
+
+          &:nth-child(4) {
+            animation-delay: 0.3s;
+          }
+
+          &:nth-child(5) {
+            animation-delay: 0.4s;
+          }
+        }
+      }
+    }
+
+    .burger-btn {
+      transform: translateX(-10rem);
+      opacity: 0;
+    }
+
+    .header_button-close {
+      opacity: 1;
+      visibility: visible;
+
+      & span {
+        &::before {
+          transform: translateX(0%);
+        }
+      }
+    }
+  }
+
+  &:not(.active) {
+    & .header_button-close {
+      & span {
+        &::before {
+          transform: translateX(-101%);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    &.animate {
+      // transform: translateY(13.475rem);
+      background-color: rgba($white, 0);
+
+      & .burger-btn,
+      .header_btn {
+        opacity: 0;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    &.animate {
+      transform: translateY(20.2rem);
+
+      & .burger-btn,
+      .header_btn {
+        opacity: 0;
+      }
+
+      & .header_logo-letter-a {
+        width: 2rem;
+        height: 1.8rem;
+
+        animation: letter-a 0.6s ease-in-out forwards;
+      }
+
+      & .header_logo-letter-k {
+        width: 1.7rem;
+        height: 2.4rem;
+
+        animation: letter-k 0.6s ease-in-out forwards;
+      }
+
+      & .header_logo-letter-i {
+        width: 0.4rem;
+        height: 2.4rem;
+
+        animation: letter-i 0.6s ease-in-out forwards;
+      }
+
+      & .header_logo-letter-w {
+        width: 2.6rem;
+        height: 1.8rem;
+
+        animation: letter-w 0.6s ease-in-out forwards;
+      }
+
+      & .header_logo-letter-a2 {
+        width: 1.7rem;
+        height: 1.9rem;
+        animation-direction: normal;
+        animation: letter-a2 0.6s ease-in-out forwards;
+      }
+    }
+
+    &.animate-reverse {
+
+      & .header_logo-letter-a {
+        width: 2rem;
+        height: 1.8rem;
+
+        animation: letter-a-reverse 0.6s ease-in-out forwards;
+      }
+
+      & .header_logo-letter-k {
+        width: 1.7rem;
+        height: 2.4rem;
+
+        animation: letter-k-reverse 0.6s ease-in-out forwards;
+      }
+
+      & .header_logo-letter-i {
+        width: 0.4rem;
+        height: 2.4rem;
+
+        animation: letter-i-reverse 0.6s ease-in-out forwards;
+      }
+
+      & .header_logo-letter-w {
+        width: 2.6rem;
+        height: 1.8rem;
+
+        animation: letter-w-reverse 0.6s ease-in-out forwards;
+      }
+
+      & .header_logo-letter-a2 {
+        animation: letter-a2-reverse 0.6s ease-in-out forwards;
+      }
+    }
+  }
+
+}
+
+body.menu-open {
+  overflow: hidden;
+}

@@ -1,0 +1,64 @@
+#modal-cookie {
+  top: auto;
+  bottom: 0;
+  height: auto;
+  background-color: $white;
+
+  .modal-shadow {
+    display: none;
+  }
+
+  .modal {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 1.2rem 4.8rem;
+    border-top: 0.1rem solid $light_blue;
+    background-color: $white;
+    color: $white;
+    transform: none;
+
+    @include phone {
+      gap: 1.6rem;
+      padding: 1.6rem;
+    }
+  }
+
+  .modal-wrapper {
+    display: flex;
+    justify-content: center;
+    position: static;
+    height: auto;
+    padding: 0;
+  }
+
+  .modal-cross {
+    display: block;
+    top: 50%;
+    right: 0;
+    width: 3.2rem;
+    height: 3.2rem;
+    padding: 0.4rem;
+    line-height: 0;
+    transform: translateY(-50%);
+    background-color: $gray_blue;
+    border-radius: 50%;
+
+    svg {
+      width: auto;
+      height: 2.4rem;
+    }
+  }
+
+  .modal-text {
+    margin-top: 0;
+
+    & a {
+      color: $orange;
+    }
+  }
+}

@@ -1,0 +1,245 @@
+.footer {
+  padding: 2.4rem 0;
+  height: 100vh;
+  overflow: hidden;
+  @include phone {
+    height: max-content;
+  }
+
+  &.animate {
+    & .footer_contacts {
+      & .title2 {
+        padding: 0.4rem 0;
+        animation: slideLeft 0.8s ease-in-out forwards, visibleText 0.8s ease-in-out forwards;
+
+        &:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+      }
+
+      & .footer_contacts-social {
+        animation: slideLeft 0.8s ease-in-out forwards 0.4s, visibleText 0.8s ease-in-out forwards 0.4s;
+      }
+    }
+
+    & .footer_nav {
+      ul {
+        li {
+          animation: slideRight 0.8s ease-in-out forwards;
+
+          &:nth-child(1) {
+            animation-delay: 0.2s;
+          }
+
+          &:nth-child(2) {
+            animation-delay: 0.3s;
+          }
+
+          &:nth-child(3) {
+            animation-delay: 0.4s;
+          }
+
+          &:nth-child(4) {
+            animation-delay: 0.5s;
+          }
+        }
+      }
+    }
+
+    & .footer_links-socials {
+      & a {
+        animation: slideRight 0.8s ease-in-out forwards;
+
+        &:nth-child(1) {
+          animation-delay: 0.6s;
+        }
+
+        &:nth-child(2) {
+          animation-delay: 0.7s;
+        }
+      }
+    }
+
+    & .button-iskra{
+      animation: slideLeft 0.8s ease-in-out forwards 0.8s, visibleText 0.8s ease-in-out forwards 0.8s;
+    }
+  }
+
+  & .footer_image {
+    display: none;
+    width: 100%;
+    height: 10.2rem;
+    margin-bottom: 8rem;
+    @include phone {
+      height: 2.4rem;
+      margin-bottom: 4rem;
+      display: block;
+    }
+  }
+
+  .wrapper {
+    height: 100%;
+  }
+
+  .footer_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: rem(235);
+    height: 100%;
+    justify-content: flex-end;
+    @include phone {
+      gap: rem(94);
+    }
+
+    & .wrapper {
+      overflow: hidden;
+    }
+
+    .anim-logo-footer {
+      height: rem(102);
+      margin-bottom: rem(80);
+    }
+
+    & .footer_contacts-nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      @include phone {
+        flex-direction: column;
+      }
+    }
+
+    & .footer_contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+
+      & .title2 {
+        transform: translateX(-120%);
+        opacity: 0;
+        @include hoverOrange;
+      }
+
+      @include phone {
+        gap: 1.6rem;
+      }
+    }
+
+    & .footer_contacts-social {
+      display: flex;
+      gap: 0.8rem;
+      transform: translateX(-120%);
+      opacity: 0;
+
+      & a {
+
+        & path {
+          transition: fill $duration;
+        }
+
+        &:hover {
+          & path {
+            fill: $orange;
+          }
+        }
+      }
+    }
+
+    & .footer_nav {
+      & ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        & li {
+          text-align: end;
+          opacity: 0;
+          transform: translateX(120%);
+        }
+      }
+    }
+
+    & .footer_links-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2.4rem;
+
+      & .button-iskra {
+        align-self: flex-end;
+        transform: translateX(-120%);
+        opacity: 0;
+
+        &.footer_link-logo {
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+          z-index: 1;
+          & .footer_logo-main-path,
+          & .footer_logo-second-path {
+            fill: $black;
+            transition: fill $duration ease-in-out;
+          }
+          &:hover {
+            & .footer_logo-main-path {
+              fill: #F43B3A;
+            }
+            & .footer_logo-second-path {
+              fill: #141414;
+            }
+          }
+        }
+
+        @include phone {
+          align-self: flex-start;
+        }
+      }
+
+      @include phone {
+        flex-direction: column-reverse;
+        row-gap: 4rem;
+      }
+    }
+
+    & .footer_links-socials {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+
+      & a {
+        text-align: end;
+        opacity: 0;
+        transform: translateX(120%);
+      }
+    }
+
+    & .footer_info {
+      display: flex;
+      gap: 2rem;
+
+      & a {
+        color: $grey;
+
+        &:hover {
+          color: $orange;
+        }
+      }
+
+      & .text {
+        color: $grey;
+      }
+
+      & span:last-child {
+        margin-left: auto;
+      }
+
+      @include phone {
+        flex-direction: column;
+        gap: 1.6rem;
+
+        & span:last-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

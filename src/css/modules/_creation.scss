@@ -1,0 +1,233 @@
+.creation {
+  position: relative;
+  padding: 16rem 0 12rem 0;
+  background-color: $white;
+  scroll-margin-top: 8rem;
+
+  @include phone {
+    padding: 12rem 0 13.8rem 0;
+  }
+
+  .creation_slider {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 84rem;
+    padding: 0 6rem;
+    padding-bottom: 10.5rem;
+    margin-bottom: 8rem;
+    align-self: center;
+
+    @include phone {
+      max-width: 34.5rem;
+      padding: 0;
+      padding-bottom: 11.5rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  //.swiper-slide {
+  //  perspective: 1000px;
+  //  /* Добавляет эффект глубины */
+  //  transform-style: preserve-3d;
+  //}
+
+  .flip-animation {
+    animation: flipX 1s forwards;
+  }
+
+  @keyframes flipX {
+    from {
+      transform: rotateX(0deg);
+    }
+
+    to {
+      transform: rotateX(-180deg);
+      /* Переворот вверх */
+    }
+  }
+
+  .creation_slide {
+    display: grid;
+    grid-template-areas: 'stage image'
+      'text image';
+    column-gap: 3.2rem;
+    padding: 3.2rem;
+    background-color: $white;
+    border: 0.1rem solid $black;
+    border-radius: 4rem;
+
+    @include phone {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.6rem;
+      height: 43.1rem;
+      padding: 1.6rem;
+      padding-bottom: 2.4rem;
+      border-radius: 2rem;
+    }
+
+    .creation_slide-wrapper {
+      width: 100%;
+    }
+
+    &:first-child {
+      display: block;
+      padding: 4rem;
+
+      & span {
+        display: block;
+        text-align: start;
+
+        &:nth-child(2) {
+          margin-left: 14.5rem;
+        }
+
+        &:last-child {
+          text-align: end;
+          padding-right: 3.4rem;
+        }
+      }
+
+      @include phone {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 1.6rem;
+
+        & span {
+          &:nth-child(2) {
+            margin-left: 0;
+            text-align: center;
+          }
+
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+
+    &:last-child {
+      display: flex;
+
+      .creation_slide-text-wrapper {
+        justify-content: center;
+        gap: 1.2rem;
+      }
+
+      @include phone {
+        & .creation_slide-image {
+          margin-top: 2.5rem;
+        }
+      }
+    }
+
+    .creation_slide-text-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 34.6rem;
+      grid-area: text;
+
+      & .text {
+        margin-top: 1.2rem;
+      }
+
+      @include phone {
+        width: 100%;
+        order: 2;
+      }
+    }
+
+    .creation_slide-stage {
+      display: block;
+      width: fit-content;
+      height: 4rem;
+      grid-area: stage;
+      border-radius: 0.8rem;
+      padding: 1rem;
+      color: $white;
+      background-color: $black;
+    }
+
+    & .creation_slide-image {
+      width: 27.8rem;
+      height: 20.8rem;
+      grid-area: image;
+      object-fit: cover;
+      pointer-events: none;
+
+      @include phone {
+        width: 100%;
+        max-height: 23.4rem;
+        height: auto;
+      }
+    }
+  }
+
+  .creation_slide__background-wrapper {
+    position: absolute;
+    width: 72rem;
+    height: 27.2rem;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include phone {
+      width: 34.5rem;
+      height: 43.1rem;
+    }
+  }
+
+  .creation_slide__background {
+    position: absolute;
+    width: 100%;
+    height: 27.2rem;
+    background-color: $white;
+    border-radius: 4rem;
+    border: 0.1rem solid $black;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include phone {
+      height: 43.1rem;
+      border-radius: 2rem;
+    }
+  }
+
+  .creation_swiper-button-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10.2rem;
+    z-index: 0;
+
+    @include phone {
+      bottom: 0;
+      justify-content: center;
+      gap: 2rem;
+    }
+  }
+
+  & .creation_animation {
+    display: flex;
+    align-items: end;
+    gap: 1.9rem;
+    margin-bottom: 2.1rem;
+    width: 100%;
+    height: 28.2rem;
+
+    @include phone {
+      gap: 0.5rem;
+      margin-bottom: 0;
+      height: 7.2rem;
+    }
+  }
+
+  &.animate {
+    animation: backgroundGrey 1.2s ease-in-out forwards;
+  }
+}

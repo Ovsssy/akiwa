@@ -1,0 +1,20 @@
+import 'swiper/css/bundle';
+// import 'swiper/css/swiper.css';
+import './../css/main.scss';
+
+import './modules/accordion';
+import './modules/modal';
+import './modules/observer';
+import './modules/creation-slider';
+import './modules/menu';
+import './modules/cases-sliders';
+import './modules/our-team-slider';
+import './modules/animation';
+import './modules/lottie';
+import './modules/gsap';
+import './modules/preloader';
+import './modules/case-page-slider';
+import './modules/form';
+import './modules/scroll';
+import './modules/card-switcher';
+import './modules/cookie';

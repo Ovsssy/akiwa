@@ -1,0 +1,45 @@
+#modal-fail {
+  .modal-title {
+    margin-bottom: 2.4rem;
+
+    @include phone {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  .modal-text {
+    margin-bottom: 4rem;
+  }
+
+  .modal-btn_contact{
+    margin-bottom: 0.8rem;
+
+    &:last-child{
+      margin: 0;
+    }
+  }
+
+  .modal-btn_contact span{
+    & img {
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-top: -0.4rem;
+    }
+  }
+
+  .modal-wrapper{
+    width: 65.6rem;
+
+    @include phone {
+      width: 100%;
+    }
+  }
+
+  .btn-image{
+    margin-bottom: 1.6rem;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,217 @@
+.our-team {
+  position: relative;
+  padding-bottom: 24rem;
+  scroll-margin-top: 8rem;
+  background-color: $white;
+
+  @include phone {
+    scroll-margin-top: 10rem;
+    padding-bottom: 20rem;
+  }
+
+  & .wrapper {
+    max-width: 144rem;
+  }
+
+  .our-team_title {
+    max-width: 31.2rem;
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateX(-120%) scale(0);
+  }
+
+  .our-team_description {
+    max-width: 31.2rem;
+    opacity: 0;
+    transform: translateX(-120%) scale(0);
+
+    @include tablet {
+      margin-bottom: 5.6rem;
+    }
+  }
+
+  .our-team_list {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 3.2rem;
+
+    @include tablet {
+      display: none;
+    }
+
+    .our-team_list-row:nth-child(2n+1) {
+      .our-team_card {
+        justify-self: end;
+      }
+    }
+  }
+
+  .our-team_list-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.2rem;
+  }
+
+  .our-team_card {
+    width: 31.2rem;
+    transform: translateY(10rem);
+    opacity: 0;
+
+    & span {
+      color: $black;
+    }
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      transform: translateY(0);
+      opacity: 1;
+
+      & span {
+        display: block;
+        margin-bottom: 1.6rem;
+      }
+
+      &.swiper-slide{
+        & img {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .our-team_card-image-wrapper {
+    position: relative;
+    margin-bottom: 1.6rem;
+    width: 100%;
+    height: 41.2rem;
+
+    @include phone {
+      max-height: 43.1rem;
+    }
+
+    .main-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+      z-index: 0;
+      opacity: 1;
+    }
+
+    & img,
+    .our-team_card-image-text-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity $duration;
+    }
+
+    .our-team_card-image-text-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2.4rem 1.6rem;
+      background-color: rgba($black, 0.60);
+      backdrop-filter: blur(0.4rem);
+    
+      & .our-team_card-image-text {
+        font-size: 1.6rem;
+        color: $white;
+      }
+    }
+
+    & .zone {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+      pointer-events: none;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    .hover-zone {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 50%;
+      z-index: 2;
+    }
+    
+    .hover-left {
+      left: 0;
+    }
+    
+    .hover-right {
+      right: 0;
+    }
+  }
+
+  .our-team_slider {
+    display: none;
+    padding-bottom: 3.2rem;
+
+    @include tablet {
+      display: block;
+      max-width: 50rem;
+    }
+
+    .main-pagination-wrapper {
+      bottom: 0;
+    }
+
+    .main-pagination-circle,
+    .main-pagination-square {
+      margin-top: 0.1rem;
+    }
+
+    &:hover {
+      & img {
+        &:nth-child(2) {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .our-team_text-wrapper {
+    &.animate {
+
+      & .our-team_title,
+      & .our-team_description {
+        animation: slideLeft 0.6s ease-in-out forwards, visibleText 0.6s ease-in-out forwards;
+      }
+    }
+  }
+
+  & .our-team_list-row {
+    &.animate {
+
+      & .our-team_card {
+        animation: slideIn 0.6s ease-in-out forwards;
+
+        &:nth-child(2) {
+          animation-delay: 0.6s;
+        }
+
+      }
+    }
+  }
+}

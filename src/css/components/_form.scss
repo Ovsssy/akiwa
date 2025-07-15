@@ -1,0 +1,103 @@
+.form,
+.wpcf7-form {
+
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  .form_group {
+    position: relative;
+  }
+
+  .form_input {
+    background-color: $light_blue;
+    transition: all $duration;
+
+    &::placeholder {
+      font-family: $base-ff;
+      font-size: 1.8rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 2.4rem;
+
+      @include phone {
+        font-size: 1.6rem;
+      }
+    }
+
+    &:hover {
+      outline: 0.1rem solid $dark_blue;
+      background-color: $white;
+    }
+
+    &:active,
+    &:focus {
+      outline: 0.1rem solid $black;
+      background-color: $white;
+    }
+
+    &.wpcf7-not-valid {
+      outline: 0.1rem solid $error;
+      background-color: $white;
+      color: $error;
+
+      &::placeholder {
+        color: $error;
+      }
+    }
+  }
+
+  .form_tel {
+    margin-top: -3.2rem;
+  }
+
+  .form_group-checkbox {
+
+    & .wpcf7-list-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: $black;
+
+      & label{
+        @include tablet {
+          gap: 0.4rem;
+        }
+      }
+    }
+
+    & .wpcf7-list-item-label {
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 180%;
+      color: $black;
+
+      @include phone {
+        font-size: 1.6rem;
+        line-height: 120%
+      }
+    }
+
+    & a {
+      @include underline;
+    }
+  }
+
+  .form_group-tabs {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .form_btn {
+    width: 100%;
+    margin-top: -1.6rem;
+
+    font-family: $second-ff;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2.4rem;
+    letter-spacing: 0.072rem;
+    text-transform: uppercase;
+    color: $white;
+  }
+}

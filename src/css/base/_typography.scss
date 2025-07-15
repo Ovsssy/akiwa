@@ -1,0 +1,95 @@
+.title1 {
+  font-family: $second-ff;
+  font-size: 6.4rem;
+  font-weight: 400;
+  line-height: 100%;
+
+  @include phone {
+    font-size: 3.2rem;
+  }
+}
+
+.title2 {
+  font-family: $second-ff;
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 100%;
+
+  @include phone {
+    font-size: 2.4rem;
+  }
+}
+
+.subtitle {
+  font-family: $second-ff;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 100%;
+
+  @include phone {
+    font-size: 1.8rem;
+  }
+}
+
+.text {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 120%;
+  color: $dark_blue;
+
+  @include phone {
+    font-size: 1.6rem;
+  }
+}
+
+.input {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+
+  @include phone {
+    font-size: 1.6rem;
+  }
+}
+
+.button {
+  font-family: $second-ff;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  letter-spacing: 0.072rem;
+  text-transform: uppercase;
+}
+
+.button-s {
+  font-family: $second-ff;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  letter-spacing: 0.052rem;
+  text-transform: uppercase;
+}
+
+.numbers {
+  font-family: $second-ff;
+  font-size: 8rem;
+  font-weight: 400;
+  line-height: 85%;
+
+  @include phone {
+    font-size: 4.8rem;
+  }
+}
+
+.numbers-2 {
+  font-family: $second-ff;
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 85%;
+}
+
+a {
+  transition: all $duration ease-in-out;
+  text-decoration: none;
+  color: $black;
+}

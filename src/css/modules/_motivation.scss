@@ -1,0 +1,235 @@
+.motivation {
+  margin-bottom: 24rem;
+  // overflow: hidden;
+
+  .wrapper{
+    // overflow: hidden;
+  }
+
+  @include tablet {
+    margin-bottom: 15rem;
+  }
+
+  .motivation_title {
+    display: flex;
+    justify-content: center;
+    gap: 3.25rem;
+    height: 25.6rem;
+    margin-bottom: 3.2rem;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 3.2rem;
+      margin-bottom: 5.2rem;
+      height: 40rem;
+    }
+
+    @include phone {
+      flex-direction: column;
+      gap: 3.2rem;
+      margin-bottom: 5.2rem;
+      height: 19.2rem;
+    }
+  }
+
+  .motivation_title-left-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 65.6rem;
+    text-align: end;
+    overflow: hidden;
+
+    @include tablet {
+      width: 100%;
+      height: 48.2rem;
+      // overflow: visible;
+    }
+
+    @include phone {
+      width: 100%;
+      height: 9.6rem;
+      // overflow: visible;
+    }
+
+
+    .anim-left {
+      position: absolute;
+      display: flex;
+      justify-content: end;
+      gap: 15rem;
+      width: fit-content;
+      right: 0;
+      text-align: end;
+      white-space: nowrap;
+      transform: translateX(-100%) scale(0);
+      overflow: hidden;
+
+      &:nth-child(2) {
+        top: 6.4rem;
+        @include phone {
+          top: 3.2rem;
+        }
+      }
+
+      &:nth-child(3) {
+        top: 12.8rem;
+
+        @include phone {
+          top: 6.4rem;
+        }
+      }
+    }
+  }
+
+  .motivation_title-right-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 12.8rem;
+    width: 65.6rem;
+    padding-bottom: 14rem;
+    color: $orange;
+    overflow: hidden;
+
+    @include tablet{
+      height: 27.8rem;
+      padding-bottom: 0;
+    }
+
+    @include phone {
+      width: 100%;
+      height: 7.2rem;
+    }
+
+    .anim-right {
+      position: absolute;
+      display: flex;
+      justify-content: start;
+      gap: 15rem;
+      width: fit-content;
+      left: 0;
+      padding-bottom: 1rem;
+      text-align: start;
+      white-space: nowrap;
+      overflow: hidden;
+      transform: translateX(100%) scale(0);
+
+      &:nth-child(2) {
+        top: 6.4rem;
+
+        @include phone {
+          top: 3.2rem;
+        }
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        bottom: 0rem;
+        left: 0;
+        width: 100%;
+        height: 0.4rem;
+        background-color: $orange;
+        transform: translateX(-100%);
+        // opacity: 0;
+
+        @include tablet {
+          height: 0.2rem;
+          bottom: 0.6rem;
+        }
+      }
+    }
+
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  .motivation_text-block {
+    display: flex;
+    justify-content: center;
+    gap: 3.2rem;
+
+    @include tablet {
+      justify-content: start;
+    }
+
+    & .motivation_text-block-empty {
+      width: 65.6rem;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  .motivation_text-wrapper {
+    display: flex;
+    gap: 3.2rem;
+    justify-content: end;
+    opacity: 0;
+
+    & p {
+      display: block;
+      max-width: 31.2rem;
+      color: $dark_blue;
+      line-height: 132%;
+      @include tablet {
+        max-width: 25.9rem;
+      }
+    }
+
+    @include tablet {
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+  }
+
+  &.animate {
+
+    .motivation_title-left-block {
+
+      & .anim-left {
+        animation: animFont2 0.8s ease-in-out forwards;
+
+        &:nth-child(2) {
+          animation-delay: 0.3s;
+        }
+
+        &:nth-child(3) {
+          animation-delay: 0.6s;
+        }
+      }
+    }
+
+    .motivation_title-right-block {
+
+      & .anim-right {
+        animation: animFont3 0.8s ease-out forwards;
+        animation-delay: 0.6s;
+
+        &:first-child {
+          &::before {
+            animation: slideLine 0.3s ease-in-out forwards;
+            animation-delay: 1.4s;
+          }
+        }
+
+        &:last-child {
+          &::before {
+            animation: slideLine 0.3s ease-in-out forwards;
+            animation-delay: 1.7s;
+          }
+        }
+      }
+
+    }
+
+    .motivation_text-wrapper {
+      animation: visibleText 0.3s ease-in-out forwards;
+      animation-delay: 2s;
+    }
+  }
+}

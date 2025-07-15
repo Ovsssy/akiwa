@@ -1,0 +1,320 @@
+.case-page {
+  padding-top: 9.1rem;
+  padding-bottom: 16.3rem;
+
+  @include phone {
+    padding-top: 4.8rem;
+    padding-bottom: 5rem;
+  }
+
+  .case-page_text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: 65.6rem;
+    margin: 0 auto;
+    margin-bottom: 5.6rem;
+  }
+
+  .case-page_descrition {
+    max-width: 31.2rem;
+  }
+
+  .case-page_list-images {
+    display: grid;
+    grid-template-columns: 16.75rem 16.75rem 1fr 16.75rem 16.75rem;
+    grid-template-rows: 22.3rem 3.4rem 22.3rem;
+    gap: 0.8rem;
+    margin: 0 auto;
+    margin-bottom: 5.6rem;
+    max-width: 133.6rem;
+
+    @include phone {
+      grid-template-columns: 16.85rem 16.85rem;
+      grid-template-rows: 22.4rem 25.8rem 25.8rem 25.8rem 22.4rem;
+    }
+
+    & li {
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &:nth-child(1) {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      &:nth-child(2) {
+        grid-column: 2/3;
+        grid-row: span 1;
+      }
+
+      &:nth-child(3) {
+        grid-column: 1/3;
+        grid-row: span 2;
+
+        @include phone {
+          grid-row: 2/3;
+        }
+      }
+
+      &:nth-child(4) {
+        grid-column: 3/4;
+        grid-row: 1/4;
+
+        @include phone {
+          grid-column: 1/3;
+          grid-row: 3/4;
+        }
+      }
+
+      &:nth-child(5) {
+        grid-column: 4/6;
+        grid-row: 1/3;
+
+        @include phone {
+          grid-column: 1/3;
+          grid-row: 4/5;
+        }
+      }
+
+      &:nth-child(6) {
+        grid-column: 4/5;
+        grid-row: 3/4;
+
+        @include phone {
+          grid-column: span 1;
+          grid-row: span 1;
+        }
+      }
+
+      &:nth-child(7) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column: 5/6;
+        grid-row: 3/4;
+
+        @include phone {
+          grid-column: 2/3;
+          grid-row: span 1;
+        }
+
+        & button {
+          width: 100%;
+          height: 100%;
+        }
+
+        & span {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .accordion2 {
+
+    & details {
+      margin: 0 auto;
+    }
+
+    @include phone {
+      width: 100%;
+    }
+
+    & .text {
+      color: $black;
+    }
+
+    .accordion2_content-list__one-column span {
+      color: $dark_blue;
+    }
+  }
+
+  .case-page_results {
+    margin-top: 3.2rem;
+    margin-bottom: 8.8rem;
+    max-width: 65.8rem;
+    margin: 0 auto;
+
+    @include phone {
+      margin-top: 2.4rem;
+      margin-bottom: 0;
+    }
+
+    .case-page_results-title {
+      padding-top: 3.2rem;
+      margin-bottom: 4rem;
+
+      @include phone {
+        padding-top: 2.4rem;
+      }
+    }
+
+    .case-page_results-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+
+      .case-page_results-percent {
+
+        & p svg {
+
+          &[data-route='up'] {
+            transform: scaleY(1);
+          }
+
+          &[data-route='down'] {
+            transform: scaleY(-1);
+          }
+        }
+      }
+
+      @include phone {
+        display: flex;
+        flex-direction: column;
+
+        .case-page_results-percent {
+
+          &:nth-child(even) {
+            order: 1;
+          }
+        }
+
+        .case-page_results-text {
+          &:nth-child(odd) {
+            order: 2;
+          }
+        }
+      }
+
+      & .subtitle {
+        margin-bottom: 1.6rem;
+      }
+    }
+
+    .case-page_results-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.4rem;
+      margin-bottom: 4rem;
+
+      & .subtitle {
+        margin-bottom: 1.6rem;
+      }
+
+      @include phone {
+        margin-bottom: 3.8rem;
+      }
+    }
+
+    .case-page_results-text,
+    .case-page_results-percent {
+      width: 31.2rem;
+
+      @include phone {
+        width: 100%;
+      }
+    }
+
+    .case-page_results-percent {
+
+      & p {
+        display: flex;
+        gap: 2.4rem;
+        color: $orange;
+      }
+    }
+  }
+
+  .other-cases {
+
+    max-width: 133.6rem;
+    margin: 0 auto;
+
+    @include phone {
+      max-width: 100%;
+      padding-top: 5.6rem;
+    }
+
+    & .other-cases_container {
+      .cases_card {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+
+        @include tablet {
+          display: flex;
+          max-width: 50rem;
+          align-self: center;
+        }
+
+        @include phone {
+          display: flex;
+          max-width: 100%;
+        }
+      }
+
+      .cases_card-slider {
+        width: 100%;
+        margin-bottom: 2.2rem;
+      }
+
+      .cases_card-slide {
+
+        width: 34.5rem;
+        height: 43.1rem;
+
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .cases_item-title {
+        padding-bottom: 1.6rem;
+        margin-bottom: 2.4rem;
+        border-bottom: 0.1rem solid $black;
+      }
+
+      .cases_item-about {
+        & .button-arrow {
+          margin-top: 1.6rem;
+          margin-bottom: 1.2rem;
+        }
+      }
+    }
+
+    & .other-cases_title {
+      max-width: 31.2rem;
+      margin-bottom: 5.6rem;
+      // opacity: 0;
+      transform: translateX(-120%) scale(0);
+    }
+
+    & .case {
+      margin-bottom: 1.6rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &.animate {
+      & .other-cases_title {
+        animation: slideLeft 0.6s ease-in-out forwards, visibleText 0.6s ease-in-out forwards;
+      }
+    }
+  }
+}
+
+.case-slider {
+  // position: absolute;
+  // width: 100%;
+  // height: 100vh;
+  // top: 0;
+  // left: 0;
+}

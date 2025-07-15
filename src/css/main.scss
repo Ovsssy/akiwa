@@ -1,0 +1,47 @@
+// // base
+@import "base/reset.scss";
+@import "utils/functions";
+@import "utils/mixin.scss";
+@import "utils/vars.scss";
+@import "utils/keyframes";
+@import "base/typography";
+@import "base/global.scss";
+
+// // components
+@import "components/elements/buttons";
+@import "components/elements/selects";
+@import "components/elements/inputs";
+@import "components/elements/links";
+@import "components/elements/case";
+@import "components/elements/preloader";
+@import "components/accordion";
+@import "components/modal-base";
+@import "components/modals/success";
+@import "components/modals/fail";
+@import "components/modals/form";
+@import "components/modals/person";
+@import "components/modals/cookie";
+@import "components/modals/case-slider";
+@import "components/form";
+@import "components/swiper";
+
+// // modules
+@import "modules/header";
+@import "modules/footer";
+@import "modules/hero-section";
+@import "modules/motivation";
+@import "modules/company-people";
+@import "modules/help-section";
+@import "modules/creation";
+@import "modules/target-audience";
+@import "modules/start";
+@import "modules/form-block";
+@import "modules/cases";
+@import "modules/our-team";
+@import "modules/preloader";
+
+// pages
+@import "pages/ui";
+@import "pages/case-page";
+@import "pages/404";
+@import "pages/privacy-policy";

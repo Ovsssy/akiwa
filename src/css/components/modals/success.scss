@@ -1,0 +1,39 @@
+#modal-success {
+
+  .modal-title {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    max-width: 65.6rem;
+
+    @include phone {
+      max-width: 100%;
+      gap: 2rem;
+    }
+
+    & span {
+      &:nth-child(1){
+        text-align: end;
+      }
+      &:nth-child(2){
+        color: $orange;
+      }
+    }
+  }
+
+  .modal_image-success {
+    position: absolute;
+    bottom: -2rem;
+    right: 4.8rem;
+    width: 100rem;
+    height: 67.7rem;
+    object-fit: cover;
+
+    @include phone {
+      bottom: -5.6rem;
+      right: 0;
+      width: 100%;
+      height: auto;
+    }
+  }
+}

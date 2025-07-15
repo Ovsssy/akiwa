@@ -1,0 +1,159 @@
+.ui-kit
+{
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  section
+  {
+    background: #444444;
+    padding: 12rem 0;
+    color: $white;
+
+    &.section-light {
+      background-color: $white;
+      color: $black;
+    }
+
+    &.section-green {
+      color: $white;
+    }
+
+    .row
+    {
+      flex-shrink: 0;
+      display: flex;
+      width: 100%;
+      margin-top: 1.6rem;
+      gap: 1.6rem;
+
+      @include phone {
+        flex-direction: column;
+      }
+    }
+
+    .inner {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+
+      @include phone {
+        flex-wrap: wrap;
+      }
+    }
+
+    .column {
+      width: auto;
+      padding-left: 0.8rem;
+      padding-right: 0.8rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .title {
+      margin-bottom: 1rem;
+      font-family: $base-ff;
+      font-size: 3rem;
+    }
+
+    .item {
+      margin-top: 1.5rem;
+    }
+
+    .bkg-black {
+      background-color: $black;
+    }
+    .bkg-light {
+      background-color: gray;
+    }
+    .bkg-green {
+    }
+  }
+
+  .colors
+  {
+    .row {
+      margin-top: 1.6rem;
+      div {
+        width: 19.9rem;
+        height: 19.9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.grey_blue {
+          background: $gray_blue;
+        }
+
+        &.white {
+          background: $white;
+          color: $black;
+        }
+
+        &.black {
+          background: $black;
+          color: $white;
+        }
+
+        &.grey {
+          background-color: $grey;
+          color: $black;
+        }
+
+        &.orange {
+          background: $orange;
+        }
+
+        &.dark_blue {
+          background: $dark_blue;
+        }
+
+        &.light_blue {
+          background: $light_blue;
+          color: $black;
+        }
+
+        &.error {
+          background: $error;
+        }
+      }
+    }
+  }
+
+
+  .typography
+  {
+    .column
+    {
+      width: 50%;
+      flex-direction: column;
+
+      h1, h2, h3, p {
+        margin-top: 2.9rem;
+      }
+    }
+  }
+
+
+  .selects {
+    .column {
+      width: 30rem;
+    }
+  }
+
+  .form-elements {
+    .inner {
+      justify-content: center;
+      background: gray;
+    }
+
+    form {
+      width: 46rem;
+    }
+  }
+}
+
+@include phone {
+  .ui-kit {
+    .column {
+      width: 100% !important;
+    }
+  }
+}

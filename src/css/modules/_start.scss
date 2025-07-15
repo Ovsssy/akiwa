@@ -1,0 +1,103 @@
+.start {
+  padding-bottom: 12rem;
+  margin-top: -24.2rem;
+  background-color: $grey;
+  position: sticky;
+  top: 0;
+
+  @include phone {
+    margin-top: 0;
+    margin-bottom: 0rem;
+  }
+
+  & .start_title {
+    position: relative;
+    margin: 0 auto;
+    margin-top: -7.4rem;
+    max-width: 144rem;
+    //height: 6.4rem;
+    margin-bottom: 8.2rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    @include tablet {
+      //height: 7rem;
+      margin-top: -1.2rem;
+      margin-bottom: 0;
+      flex-direction: column;
+      gap: 0;
+      align-items: flex-start;
+    }
+
+    & span {
+
+      &:first-child {
+      //  position: absolute;
+      //  top: 0.1rem;
+      //  left: 0.2rem;
+       transform: translateY(10rem);
+      }
+
+      &:nth-child(2) {
+        //position: absolute;
+        //top: 0.1rem;
+        //left: 37rem;
+        color: $orange;
+        transform: translateY(10rem);
+
+        @include phone {
+          //top: 3.8rem;
+          //left: 8.7rem;
+          padding-left: 8.7rem;
+        }
+      }
+    }
+  }
+
+  .start_lottie {
+    width: 100%;
+    max-width: 144rem;
+    margin: 0 auto;
+    height: auto;
+
+    & svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include tablet {
+      height: 90rem;
+    }
+
+    @include phone {
+      height: 37rem;
+    }
+  }
+
+  &.animate {
+    .start_title {
+      & span {
+        &:first-child {
+          animation: rise 0.8s ease-in-out forwards;
+          animation-delay: 2.9s;
+        }
+
+        &:nth-child(2) {
+          animation: rise 0.8s ease-in-out forwards;
+          animation-delay: 3s;
+        }
+
+        @include phone {
+          &:first-child {
+            animation-delay: 1.3s;
+          }
+  
+          &:nth-child(2) {
+            animation-delay: 1.4s;
+          }
+        }
+      }
+    }
+  }
+}

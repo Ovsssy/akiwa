@@ -1,0 +1,5 @@
+@function rem($fz) {
+  $rem: calc($fz / 16);
+
+  @return $rem+rem;
+};

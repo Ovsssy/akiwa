@@ -1,0 +1,49 @@
+#modal-form {
+  .modal-title {
+    text-align: left;
+    margin-bottom: 2.4rem;
+
+    @include phone {
+      font-size: 3.2rem;
+      margin-bottom: 1.6rem;
+    }
+  }
+  .modal-form {
+    width: 100%;
+  }
+  .modal-form input{
+    margin-bottom: 1.6rem;
+    height: 5.6rem;
+    padding: 1.8rem 1.6rem 0 1.6rem;
+  }
+
+  .modal-form_input .input-placeholder{
+    top: 1.8rem;
+    left: 1.6rem;
+  }
+
+  .modal-checkbox-text{
+    color: $black;
+  }
+
+  .modal-content{
+    align-self: start;
+  }
+
+  .modal-wrapper{
+    margin-top: -0.6rem;
+  }
+
+  & .input {
+    height: 5.6rem;
+  }
+
+  .input-placeholder{
+    top: 2rem;
+  }
+
+  .footer_form{
+    margin: 0;
+    height: 100%;
+  }
+}

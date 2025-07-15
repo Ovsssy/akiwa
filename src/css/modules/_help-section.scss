@@ -1,0 +1,165 @@
+.help-section {
+  margin-bottom: 24rem;
+  scroll-margin-top: 8rem;
+
+  & .wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6.4rem;
+
+    @include tablet {
+      row-gap: 5.6rem;
+    }
+  }
+
+  .help-section_title {
+    max-width: 65.6rem;
+    text-align: end;
+    opacity: 0;
+
+    @include tablet {
+      text-align: start;
+    }
+
+    @include phone {
+      text-align: start;
+      max-width: 25.9rem;
+    }
+  }
+
+  & .help-section_title-text-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 3.4rem;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    &.animate {
+      & .help-section_title {
+        animation: visibleText 0.3s ease-in-out forwards;
+      }
+
+      & .text {
+        &:nth-child(1) {
+          animation: visibleText 0.3s ease-in-out forwards;
+          animation-delay: 0.3s;
+        }
+
+        &:nth-child(2) {
+          animation: visibleText 0.3s ease-in-out forwards;
+          animation-delay: 0.6s;
+        }
+
+        &:nth-child(3) {
+          animation: visibleText 0.3s ease-in-out forwards;
+          animation-delay: 0.9s;
+        }
+
+        &:nth-child(4) {
+          animation: visibleText 0.3s ease-in-out forwards;
+          animation-delay: 1.2s;
+        }
+      }
+    }
+  }
+
+  & .help-section_text-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 3.2rem;
+    row-gap: 2.4rem;
+    padding-top: 10rem;
+    max-width: 65.4rem;
+
+    & .text {
+      max-width: 31.1rem;
+      opacity: 0;
+    }
+
+    @include tablet {
+      padding-top: 0;
+
+      & .text {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .help-section_image-wrapper{
+    position: relative;
+    width: 100%;
+    max-width: 134.2rem;
+    height: 60rem;
+    margin: 0 auto;
+    overflow: hidden;
+
+    & img {
+      pointer-events: none;
+    }
+
+    @include phone {
+      height: 19rem;
+    }
+  }
+
+  .help-section_image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  .help-section_description-statistic-wrapper{
+    opacity: 0;
+    &.animate {
+      animation: visibleText 0.3s ease-in-out forwards;
+    }
+  }
+
+  .help-section_description {
+    display: grid;
+    grid-template-columns: 65.6rem 65.6rem;
+    justify-content: center;
+    gap: 3.2rem;
+    margin-bottom: 6.4rem;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+      margin-bottom: 5.6rem;
+    }
+  }
+
+  .help-section_statistics-list {
+    display: grid;
+    grid-template-columns: repeat(4, 31.2rem);
+    justify-content: center;
+    gap: 3.2rem;
+
+    & li {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.6rem;
+
+      & .numbers, .hero-section_sign {
+        color: $orange;
+      }
+    }
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  @include tablet {
+    margin-bottom: 20rem;
+  }
+}

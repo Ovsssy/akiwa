@@ -1,0 +1,77 @@
+.page-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  height: 100vh;
+  background-color: $grey;
+
+  @include phone {
+    padding: 4rem 1.4rem 4rem 1.6rem;
+    height: 100vh;
+  }
+}
+
+.page-404_wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  max-width: 65.6rem;
+  border-radius: 0.8rem;
+
+  & svg{
+    margin-bottom: 4rem;
+    width: 50.8rem;
+    height: 23.5rem;
+
+    @include phone {
+      width: 25.3rem;
+      height: 11.7rem;
+    }
+  }
+
+  @include phone {
+    max-width: 100%;
+  }
+}
+
+.page-404_btn {
+  @include phone {
+    width: 100%;
+    margin-bottom: 9.6rem;
+    margin-top: 0.4rem;
+    padding: 0.1rem 0.6rem;
+  }
+}
+
+.page-404_btn span {
+  border-radius: 0.5rem;
+  border: 0.1rem solid red;
+}
+
+.page-404_image-wrapper {
+  margin-top: -33rem;
+  margin-left: 58rem;
+  max-width: 48rem;
+  z-index: 1;
+
+  @include tablet {
+    margin-top: -31rem;
+    margin-left: 46rem;
+  }
+
+  @include phone {
+    min-width: 37.5rem;
+    max-width: 40.5rem;
+    height: auto;
+    margin-left: 0;
+    margin-top: -5.3rem;
+  }
+}
+
+.page-404_image {
+  width: 100%;
+}
